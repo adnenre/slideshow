@@ -1,0 +1,213 @@
+/* Wrapper
+-------------------------------------------*/
+.wifSlide {
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* Image
+-------------------------------------------*/
+.wifSlide .wrapper img {
+  position: absolute; /* They key to the “effects” approach */
+  width: 100%;
+  height: 400px;
+}
+
+/* Prev & Next buttons
+-------------------------------------------*/
+
+.wifSlide a.next {
+  right: 0;
+}
+
+.wifSlide .nav.left {
+  left: 20px;
+}
+.wifSlide .nav.center {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.wifSlide .nav.right {
+  right: 20px;
+}
+/* Prev & Next buttons
+-------------------------------------------*/
+
+.wifSlide .next,
+.wifSlide .prev {
+  background: none;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.wifSlide > .prev,
+.wifSlide > .prev::before {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  left: 5%;
+}
+
+.wifSlide .next,
+.wifSlide .next::after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  right: 5%;
+}
+
+.wifSlide .next::before,
+.wifSlide .prev::after,
+.wifSlide .next,
+.wifSlide .prev {
+  position: absolute;
+  top: 48%;
+  width: 20px;
+  height: 20px;
+  border: solid #fcfcfc92;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.wifSlide .next:hover,
+.wifSlide .prev:hover {
+  border: solid #fcfcfc;
+  border-width: 0 3px 3px 0;
+}
+
+/* bullets navigation
+-------------------------------------------*/
+.wifSlide .nav {
+  position: absolute;
+  margin: 0.5em 0;
+  overflow: hidden;
+  bottom: 10px;
+}
+
+.wifSlide .nav a {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ffffff;
+  margin: 0 2px 0 5px;
+  transition: all 0.3s;
+}
+.wifSlide .nav a.current {
+  background-color: #fcfcfc92;
+}
+/* Slide container info
+-------------------------------------------*/
+.wifSlide .wrapper .slide__info {
+  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  left: -50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  opacity: 1;
+  font-family: "Raleway";
+  transition: all 0.5s;
+}
+.wifSlide .wrapper .slide__info .slide__info--subtitle {
+  position: absolute;
+  top: 0px;
+
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: 200;
+}
+/* Slide title
+-------------------------------------------*/
+.wifSlide .wrapper .slide__info .slide__info--title {
+  font-size: 2rem;
+  padding: 0;
+  margin-top: 5px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: normal;
+  white-space: nowrap;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+hr {
+  width: 50%;
+  height: 1.5px;
+  background-color: white;
+  margin: 15px auto;
+}
+/* Slide country
+  -------------------------------------------*/
+.wifSlide .wrapper .slide__info .slide__info--country {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+/* Forum button
+-------------------------------------------*/
+
+a.slide__info--button {
+  font-weight: 700;
+  min-width: fit-content;
+  border-radius: 0 10px 0 10px;
+
+  background-color: #f18b00;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 7.31354px 21.5104px;
+  font-size: 1rem;
+  line-height: 13.7667px;
+  width: 50%;
+  text-align: center;
+
+  text-decoration: none;
+  transition-duration: 6925ms;
+  transition-property: -webkit-transform, opacity;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s;
+}
+a.slide__info--button:hover {
+  background-color: #ffc107;
+}
+
+/* Image
+---------------------------------------------------*/
+.image.current > .slide__info {
+  left: 50%;
+
+  transition: all 0.5s ease-in-out;
+}
+.image > .slide__info {
+  left: 50%;
+  transition: all 0.5s ease-in-out;
+}
+/* Slide logo
+---------------------------------------------------*/
+.slide__logo {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  width: 5rem;
+}
+.slide__logo--left {
+  left: 10px;
+}
+.slide__logo--right {
+  right: 15px;
+}
+@media only screen and (max-width: 600px) {
+  .slide__info--title {
+    font-size: 20px !important;
+  }
+}
